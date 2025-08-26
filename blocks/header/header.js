@@ -133,7 +133,7 @@ export default async function decorate(block) {
     // Replace the first section's contents with the authored image wrapped with a link to '/'
     navBrand.innerHTML = `<a href="/" aria-label="Home" title="Home" class="home">${logo.outerHTML}</a>`;
     // Make sure the logo is not lazy loaded as it's above the fold and can affect page load speed
-    navBrand.querySelector('img').settAttribute('loading', 'eager');
+    navBrand.querySelector('img').setAttribute('loading', 'eager');
   }
   /*
   const brandLink = navBrand.querySelector('.button');

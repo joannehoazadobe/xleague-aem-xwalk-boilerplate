@@ -289,5 +289,88 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "weather",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "weatherData_location",
+        "label": "City or Zip Code",
+        "value": "New York",
+        "description": "Enter a city name or zip code (e.g., 'New York' or '10001')"
+      },
+      {
+        "component": "select",
+        "name": "weatherData_provider",
+        "label": "Weather Provider",
+        "value": "weatherapi",
+        "options": [
+          {
+            "name": "OpenWeatherMap",
+            "value": "openweathermap"
+          },
+          {
+            "name": "WeatherAPI",
+            "value": "weatherapi"
+          },
+          {
+            "name": "AccuWeather",
+            "value": "accuweather"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "weatherData_units",
+        "label": "Temperature Units",
+        "value": "metric",
+        "options": [
+          {
+            "name": "Celsius",
+            "value": "metric"
+          },
+          {
+            "name": "Fahrenheit",
+            "value": "imperial"
+          },
+          {
+            "name": "Kelvin",
+            "value": "standard"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "name": "weatherData_showForecast",
+        "label": "Show 5-Day Forecast",
+        "value": false
+      },
+      {
+        "component": "select",
+        "name": "weatherData_theme",
+        "label": "Display Theme",
+        "value": "default",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          },
+          {
+            "name": "Minimal",
+            "value": "minimal"
+          },
+          {
+            "name": "Card",
+            "value": "card"
+          }
+        ]
+      }
+    ]
   }
 ]

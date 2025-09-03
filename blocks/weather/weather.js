@@ -56,6 +56,7 @@ function buildUrl(baseUrl, endpoint, params) {
       url.searchParams.append(key, value);
     }
   });
+  console.log('full url with params', url.toString());
   return url.toString();
 }
 

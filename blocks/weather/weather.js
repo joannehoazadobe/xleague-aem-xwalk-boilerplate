@@ -276,7 +276,8 @@ async function fetchWeatherData(provider, location, apiKey, units, showForecast 
         }
 
         const data = await response.json();
-        // weatherData.current = normalizeWeatherApiData(data.current, data.location, responseUnits);
+        const responseUnits = data.units || units;
+        weatherData.current = normalizeWeatherApiData(data.current, data.location, responseUnits);
     }
 
     return weatherData;
@@ -300,6 +301,7 @@ function createWeatherDisplay(weatherData, theme) {
   const currentWeather = document.createElement('div');
   currentWeather.className = 'weather-current';
 
+  console.log('current weather', current);
   // Build high/low display if available
   let highLowHtml = '';
   if (current.maxTemp !== null && current.minTemp !== null) {

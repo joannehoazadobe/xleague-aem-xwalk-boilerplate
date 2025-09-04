@@ -253,7 +253,7 @@ async function fetchWeatherData(provider, location, apiKey, units, showForecast 
           responseUnits,
         );
         weatherData.forecast = normalizeWeatherApiForecast(data.forecast, responseUnits);
-      } else if (provider === 'accuweather') {
+      } else {
         const url = buildUrl(service.baseUrl, service.currentEndpoint, params);
         const response = await fetch(url);
 
@@ -265,7 +265,8 @@ async function fetchWeatherData(provider, location, apiKey, units, showForecast 
         // Use units from response if available, otherwise fall back to the requested units
         const responseUnits = data.units || units;
         weatherData.current = normalizeWeatherApiData(data.current, data.location, responseUnits);
-      } else if (provider === 'appbuilderweatherapi') {
+      } 
+    } else if (provider === 'appbuilderweatherapi') {
         const params = service.getParams(location, units);
         const url = buildUrl(service.baseUrl, service.currentEndpoint, params);
         const response = await fetch(url);
@@ -273,6 +274,9 @@ async function fetchWeatherData(provider, location, apiKey, units, showForecast 
         if (!response.ok) {
           throw new Error(`App Builder Weather API error: ${response.status} ${response.statusText}`);
         }
+
+        const data = await response.json();
+        // weatherData.current = normalizeWeatherApiData(data.current, data.location, responseUnits);
     }
 
     return weatherData;

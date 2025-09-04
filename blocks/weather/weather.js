@@ -280,8 +280,7 @@ async function fetchWeatherData(provider, location, apiKey, units, showForecast 
         console.log('data units', data.units);
         console.log('units', units);
         console.log('responseUnits', responseUnits);
-        responseUnits = 'imperial';
-        weatherData.current = normalizeWeatherApiData(data.current, data.location, responseUnits);
+        weatherData.current = normalizeWeatherApiData(data.current, data.location, 'imperial');//responseUnits);
     }
 
     return weatherData;

@@ -277,6 +277,8 @@ async function fetchWeatherData(provider, location, apiKey, units, showForecast 
 
         const data = await response.json();
         const responseUnits = data.units || units;
+        console.log('data units', data.units);
+        console.log('units', units);
         weatherData.current = normalizeWeatherApiData(data.current, data.location, responseUnits);
     }
 

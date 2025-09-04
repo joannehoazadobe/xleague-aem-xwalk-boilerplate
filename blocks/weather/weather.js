@@ -42,6 +42,15 @@ const WEATHER_SERVICES = {
       q: location,
     }),
   },
+  appbuilderweatherapi: {
+    baseUrl: 'https://39246-458snowaphid-stage.adobeio-static.net/api/v1/web/weatherapi-forecast-app/get-weather',
+    currentEndpoint: '/current.json',
+    forecastEndpoint: '/forecast.json',
+    getParams: (location, units) => ({
+      q: location,
+      units,
+    }),
+  },
 };
 
 /**

@@ -45,6 +45,10 @@
               {
                 "name": "AccuWeather",
                 "value": "accuweather"
+              },
+              {
+                "name": "App Builder Weather API",
+                "value": "appbuilderweatherapi"
               }
             ]
           },

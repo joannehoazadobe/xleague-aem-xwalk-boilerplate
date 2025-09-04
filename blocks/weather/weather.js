@@ -47,7 +47,7 @@ const WEATHER_SERVICES = {
     currentEndpoint: '/current.json',
     forecastEndpoint: '/forecast.json',
     getParams: (location, units) => ({
-      q: location,
+      city: location,
       units,
     }),
   },

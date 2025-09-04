@@ -131,6 +131,8 @@ function normalizeWeatherApiData(current, location, todayForecast = null, units 
   let maxTemp = null;
   let minTemp = null;
 
+  console.log('inside normalizeWeatherApiData units', units);
+
   if (units === 'imperial') {
     tempUnit = '°F';
     temperature = Math.round(current.temp_f);
